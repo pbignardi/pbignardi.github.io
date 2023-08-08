@@ -12,7 +12,9 @@ module.exports = {
       extend: {},
     },
     fontFamily: {
-      mono: ["JetBrains Mono", 'monospace']
+      mono: ["JetBrains Mono", 'monospace'],
+      serif: ["Roboto Slab", 'serif'],
+      sans: ["Barlow", 'sans']
     }
   },
   plugins: []
