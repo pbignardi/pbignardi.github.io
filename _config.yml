@@ -1,6 +1,15 @@
 url: "" # the base hostname & protocol for your site, e.g. http://example.com
 baseurl: "" # the subpath of your site, e.g. /blog
-title: "" # the name of your site, e.g. ACME Corp.
+title: Paolo Bignardi # the name of your site, e.g. ACME Corp.
+author: 
+  name: "Paolo Bignardi"
+  bio: PhD student, University of Pavia
+  interests: Wave propagation phenomena, space-time methods. 
+
+links:
+  email: paolo.bignardi01@universitadipavia.it 
+  github: pbignardi
+
 plugins:
   - jekyll-postcss
 
