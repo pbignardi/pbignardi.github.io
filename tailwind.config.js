@@ -17,5 +17,7 @@ module.exports = {
       sans: ["Barlow", 'sans']
     }
   },
-  plugins: []
+  plugins: [
+    require('@tailwindcss/typography'),
+  ]
 }
