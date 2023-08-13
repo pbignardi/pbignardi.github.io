@@ -1,6 +1,17 @@
 ---
 layout: default
 ---
+{% capture card %}
+  {% include card.html %}
+{% endcapture %}
+{% include cell.html title = 'About' content=card %}
 
-{% include cell.html section = "Papers" content = "Nothing here" %}
-{% include cell.html section = "Personal info" content = "Nothing here" %}
+{% for page in site.pages %}
+  {% capture title %}
+    {{ page.title }}
+  {% endcapture %}
+  {% capture content %}
+    {{ page.content | markdownify }}
+  {% endcapture %}
+  {% include cell.html title=title content=content %}
+{% endfor %}
