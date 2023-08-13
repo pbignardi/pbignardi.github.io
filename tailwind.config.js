@@ -21,9 +21,11 @@ module.exports = {
       extend: {},
     },
     fontFamily: {
-      mono: ["JetBrains Mono", 'monospace'],
+      jetbrains_mono: ["JetBrains Mono", 'monospace'],
       serif: ["Roboto Slab", 'serif'],
-      sans: ["Barlow", 'sans']
+      sans: ["Barlow", 'sans'],
+      ibm_mono: [ 'IBM Plex Mono', 'monospace' ],
+      fira_mono: [ 'Fira Mono', 'monospace' ],
     }
   },
   plugins: [

@@ -2,6 +2,7 @@
 ---
 
 @import url('https://fonts.googleapis.com/css2?family=Barlow&family=JetBrains+Mono&family=Roboto&family=Roboto+Slab&family=Ubuntu&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fira+Mono&family=IBM+Plex+Mono&display=swap');
 @tailwind base;
 @tailwind utilities;
 @tailwind components;
