@@ -1,15 +1,10 @@
-<!-- Cell-like component. Pluto.jl style -->
-<div class="block py-4">
-<div class="flex">
-  <div class="w-1 bg-slate-400 rounded-l-lg"></div>
-  <div class="w-full">
-    <div class="px-2 bg-zinc-200 text-red-500 rounded-tr-sm border-t border-r border-slate-400 font-mono font-semibold"># print_{{ include.title | downcase | split: " " | join: "_" }}();</div>
-    <div class="bg-zinc-50 rounded-br-sm border-b border-r border-t border-slate-400 font-sans flex">
-      <div class="prose grow max-w-full w-full">
-        {{ include.content }}
-      </div>
-    </div>
-  </div>
-</div>
-<div class="px-2 text-right text-xs italic text-slate-400 font-mono">End of cell</div>
+<div class="my-4 mb-6">
+	<div class="text-2xl px-4 text-orange-700">
+	# {{ include.title }}
+	</div>
+	<div class="border-t-2 border-stone-600 px-4 p-1 text-justify">
+		<div class="prose mx-4">
+			{{ include.content }} 
+		</div>
+	</div>
 </div>
