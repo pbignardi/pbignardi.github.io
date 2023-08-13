@@ -1,5 +1,5 @@
 ---
-layout: mdpage
+layout: basicpage
 title: Conferences and workshops
 ---
 
