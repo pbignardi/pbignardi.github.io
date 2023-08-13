@@ -8,11 +8,13 @@ title: Home
 {% include cell.html title = 'About' content=card %}
 
 {% for page in site.pages %}
-  {% capture title %}
-    {{ page.title }}
-  {% endcapture %}
-  {% capture content %}
-    {{ page.content | markdownify }}
-  {% endcapture %}
-  {% include cell.html title=title content=content %}
+  {% if page.layout == 'basicpage' %}
+    {% capture title %}
+      {{ page.title }}
+    {% endcapture %}
+    {% capture content %}
+      {{ page.content | markdownify }}
+    {% endcapture %}
+    {% include cell.html title=title content=content %}
+  {% endif %}
 {% endfor %}
