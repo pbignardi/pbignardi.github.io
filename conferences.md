@@ -5,14 +5,13 @@ title: Conferences and workshops
 
 {% assign grouped_confs = site.data.conferences | group_by: "year" %}
 {% for confgroup in grouped_confs %}
-  #### {{ confgroup.name }}
+#### {{ confgroup.name }}
   <ol>
     {% for conf in confgroup.items %}
       <li>
         <a href="{{ conf.link }}" target="_blank">{{ conf.name }}</a>,
         {{ conf.city }},
-        {{ conf.startdate | date: "%d %b" }} ⇒ {{ conf.enddate | date: "%d %b" }},
-        {{ conf.year }}
+        {{ conf.startdate | date: "%d %b" }}  {{ conf.enddate | date: "%d %b" }}
         {% if conf.extra != "" %}
           <br>
           {{ conf.extra }}
