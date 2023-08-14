@@ -25,6 +25,7 @@ module.exports = {
       serif: ["Roboto Slab", 'serif'],
       sans: ["Barlow", 'sans'],
       ibm_mono: [ 'IBM Plex Mono', 'monospace' ],
+      nerdfont: ['BlexMono Nerd Font', 'monospace'],
       fira_mono: [ 'Fira Mono', 'monospace' ],
     }
   },
