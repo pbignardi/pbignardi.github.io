@@ -3,11 +3,21 @@ layout: basicpage
 title: Conferences and workshops
 ---
 
-### 2023
-1. <a href="https://sites.google.com/view/power2023turin/" target="_blank">PoWER 2023</a>, Turin, 
-    26-28 July 2023.
-1. SIMAI
-
-### 2022
-- Waves 2022
-- YAMC 2022
+{% assign grouped_confs = site.data.conferences | group_by: "year" %}
+{% for confgroup in grouped_confs %}
+  #### {{ confgroup.name }}
+  <ol>
+    {% for conf in confgroup.items %}
+      <li>
+        <a href="{{ conf.link }}" target="_blank">{{ conf.name }}</a>,
+        {{ conf.city }},
+        {{ conf.startdate | date: "%d %b" }} ⇒ {{ conf.enddate | date: "%d %b" }},
+        {{ conf.year }}
+        {% if conf.extra != "" %}
+          <br>
+          {{ conf.extra }}
+        {% endif %}
+      </li>
+    {% endfor %}
+  </ol>
+{% endfor %}
