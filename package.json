@@ -1,0 +1,36 @@
+{
+  "name": "personal-www",
+  "version": "1.0.0",
+  "description": "Personal website.",
+  "main": "index.js",
+  "scripts": {
+    "dev": "npx @11ty/eleventy --serve",
+    "build": "npx @11ty/eleventy"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pbignardi/pbignardi.github.io.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "module",
+  "bugs": {
+    "url": "https://github.com/pbignardi/pbignardi.github.io/issues"
+  },
+  "homepage": "https://github.com/pbignardi/pbignardi.github.io#readme",
+  "dependencies": {
+    "@11ty/eleventy": "^3.1.5",
+    "@11ty/eleventy-navigation": "^1.0.5",
+    "eleventy-plugin-toc": "^1.1.5",
+    "html-minifier-terser": "^7.2.0",
+    "markdown-it-anchor": "^9.2.0",
+    "markdown-it-attrs": "^5.0.0",
+    "modern-normalize": "^3.0.1",
+    "sass": "^1.100.0"
+  },
+  "devDependencies": {
+    "@shikijs/markdown-it": "^4.1.0",
+    "shiki": "^4.1.0"
+  }
+}

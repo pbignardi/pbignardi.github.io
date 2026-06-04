@@ -1,0 +1,31 @@
+---
+lang: en
+description: Overview of all posts!
+title: List of blog posts
+eleventyNavigation:
+    key: "Posts"
+    parent: "Home"
+navOptions:
+    includeSelf: true
+---
+
+{% layout "base.liquid" %}
+{% block content %}
+
+<main>
+<header>
+    <h1>{{ title }}</h1>
+    <p>Stuff stuff stuff...</p>
+</header>
+
+<ol reversed start={{ collections.blog_post.length - 1}}>
+    {%- for post in collections.blog_posts | reverse -%}
+        <li>
+            <a href="{{ post.url }}">{{ post.data.title }}</a>
+            <br>published on <time>{{ post.date }}</time>
+        </li>
+    {%- endfor -%}
+</ol>
+</main>
+
+{% endblock %}

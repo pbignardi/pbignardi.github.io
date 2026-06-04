@@ -1,0 +1,211 @@
+@import url('https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300..900;1,300..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400;1,700&family=IBM+Plex+Sans:ital,wght@0,100..700;1,100..700&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Jost:ital,wght@0,100..900;1,100..900&family=Karla:ital,wght@0,200..800;1,200..800&family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Outfit:wght@100..900&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
+
+:root {
+    --detail-color: #f28f4b;
+    --link-color: #60bbf2;
+    --accent-color: #a8d15b;
+    background-color: #c8c8c8;
+    color: #0e0e0e;
+    ::selection {
+        background: rgb(from var(--accent-color) r g b / 0.4);
+    }
+}
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        --detail-color: #f28f4b;
+        background-color: #0e0e0e;
+        color: #c8c8c8;
+    }
+}
+
+html, body {
+    margin: 0 auto;
+    max-width: 54rem;
+    padding-left: 0;
+    padding-right: 0;
+    line-height: 1.5em;
+    font-family: "Ubuntu";
+    scroll-behavior: smooth;
+}
+
+main {
+    padding-left: 0;
+    padding-right: 0;
+}
+
+footer {
+    text-align: center;
+    padding: 0;
+    padding: 0.5rem 0;
+    font-size: 75%;
+    border-color: #222;
+    border-top-width: 1px;
+    border-top-style: solid;
+    margin-top: 4rem;
+}
+
+a {
+    color: var(--detail-color);
+    text-decoration: wav;
+}
+
+header {
+    margin-top: 6rem;
+    margin-bottom: 2rem;
+}
+
+.header-anchor {
+    color: var(--detail-color);
+    text-decoration: none;
+    font-weight: bold;
+    font-family: "Figtree";
+}
+
+h1, h2, h3, h4, h5, h6 {
+    position: relative;
+    font-weight: 700;
+    font-family: "Figtree";
+    color: #fff;
+    text-transform: uppercase;
+}
+
+@media only screen and (max-width: 576px) {
+    main, nav {
+        padding-left: 1rem;
+        padding-right: 1rem;
+        max-width: 100%;
+    }
+
+    header {
+        margin-top: 3rem;
+        margin-bottom: 1rem;
+    }
+
+}
+
+.navbar {
+    display: flex;
+    align-items: center;
+    height: 3rem;
+    /* font-family: "Figtree"; */
+
+    h3 {
+        margin: 0;
+        margin-right: auto;
+    }
+
+    ul {
+        display: flex;
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
+
+    li {
+        margin: 0;
+        margin-left: 1rem;
+    }
+
+    a {
+        text-decoration: none;
+        /* font-weight: 700; */
+    }
+}
+
+.breadcrumb {
+    padding: 1rem 0;
+
+    ol {
+        display: flex;
+        flex-wrap: wrap;
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        align-items: end;
+
+    }
+
+    a {
+        color: #60bbf2;
+    }
+
+    li:not(:last-child) {
+        ::after {
+            display: inline-block;
+            margin: 0 0.25rem;
+            content: "/";
+            color: #555;
+        }
+    }
+
+    li:last-child a {
+        color: #c8c8c8;
+        text-decoration: none;
+        cursor: default;
+        pointer-events: none;
+    }
+}
+
+@media only screen and (max-width: 576px) {
+    .breadcrumb {
+        padding: 1rem;
+    }
+}
+
+.container {
+    display: grid;
+    grid-template-columns: 1fr 14rem;
+    gap: 2rem;
+
+    .content {
+        width: 100%;
+    }
+
+    .toc div {
+        position: sticky;
+        top: 2rem;
+        width: 14rem;
+
+
+        nav ol {
+            padding: 0;
+            li {
+                list-style-type: none;
+                a {
+                    color: #60bbf2;
+                    text-decoration: none;
+                    transition: color 0.1s ease-in;
+                }
+
+                a:hover {
+                    text-decoration: underline;
+                    color: var(--detail-color);
+                }
+
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 576px) {
+    .container {
+        grid-template-columns: auto;
+        gap: 0;
+    }
+
+    .content {
+        order: 2;
+    }
+
+    .toc {
+        order: 1;
+        /* display: none; */
+    }
+}
+
+.shiki {
+    border-radius: 0.5rem;
+    padding: 1rem;
+}
