@@ -68,7 +68,6 @@ h1, h2, h3, h4, h5, h6 {
     font-weight: 700;
     font-family: "Figtree";
     color: #fff;
-    text-transform: uppercase;
 }
 
 @media only screen and (max-width: 576px) {
@@ -208,4 +207,11 @@ h1, h2, h3, h4, h5, h6 {
 .shiki {
     border-radius: 0.5rem;
     padding: 1rem;
+}
+
+.postlist {
+    list-style-type:disc;
+    li {
+        padding: 0.5rem 0rem;
+    }
 }
