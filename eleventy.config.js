@@ -3,7 +3,6 @@ import markdownItAttrs from "markdown-it-attrs";
 import markdownIt from "markdown-it";
 import htmlmin from "html-minifier-terser";
 import eleventyToc from "eleventy-plugin-toc";
-import fontAwesomePlugin from "@11ty/font-awesome";
 import eleventyNavigationPlugin from "@11ty/eleventy-navigation";
 import Shiki from '@shikijs/markdown-it'
 
@@ -36,15 +35,10 @@ export default async function(config) {
     // navigation plugin
     config.addPlugin(eleventyNavigationPlugin);
 
-    // font-awesome plugin
-	config.addPlugin(fontAwesomePlugin);
-
     // markdown-it
     const md = markdownIt().use(markdownItAnchor, {
-        levels: [2],
-        permalink: markdownItAnchor.permalink.ariaHidden({
-            placement: 'after'
-        })
+        levels: [1, 2],
+        permalink: markdownItAnchor.permalink.ariaHidden()
     }).use(markdownItAttrs).use(await Shiki({
         themes: {
             dark: "ayu-mirage",
