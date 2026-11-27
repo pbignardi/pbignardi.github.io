@@ -6,25 +6,18 @@ import eleventyToc from "eleventy-plugin-toc";
 import eleventyNavigationPlugin from "@11ty/eleventy-navigation";
 import Shiki from '@shikijs/markdown-it'
 
-async function shikiPlugin(configuration, options) {
-  const highlighter = await createHighlighter(options);
-  configuration.amendLibrary("md", (library) => {
-    library.set({
-      highlight: (code, language) => {
-        return highlighter.codeToHtml(code, {
-          lang: language,
-          theme: options.theme,
-        });
-      },
-    });
-  });
-}
-
 export default async function(config) {
     config.setInputDirectory("src");
 
+    // parse excerpt
+    config.setFrontMatterParsingOptions({
+        excerpt: true,
+        excerpt_separator: "<!-- excerpt -->",
+    });
+
     // passthrough
     config.addPassthroughCopy("css");
+    config.addPassthroughCopy("js");
     config.addPassthroughCopy("fonts");
 
     // TOC plugin
@@ -38,12 +31,20 @@ export default async function(config) {
     // markdown-it
     const md = markdownIt().use(markdownItAnchor, {
         levels: [1, 2],
-        permalink: markdownItAnchor.permalink.ariaHidden()
+        permalink: markdownItAnchor.permalink.ariaHidden({
+            placement: 'after',
+        })
     }).use(markdownItAttrs).use(await Shiki({
         themes: {
-            dark: "ayu-mirage",
-            light: "ayu-mirage"
-        }
+            dark: "ayu-dark",
+            light: "ayu-light"
+        },
+        colorReplacements: {
+            'ayu-dark': {
+                '#0d1017': '#202020'
+            }
+        },
+        defaultColor: false,
     }))
 
 	config.setLibrary("md", md);

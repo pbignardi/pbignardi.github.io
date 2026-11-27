@@ -2,26 +2,37 @@
 {% block content %}
 
 <main>
-<!-- title -->
-<header>
-    <h1>{{ title }}</h1>
-</header>
-
-<!-- main content  -->
-<div class="container">
-    <div class="content">
-        {{ content }}
-    </div>
-    <div class="toc">
-        <div>
-            <h4>Outline</h4>
-            {{ content | toc }}
+    <div class="container">
+        <div class="content">
+            <header>
+                <h1>{{ title }}</h1>
+            </header>
+            <div style="margin-bottom: 2rem;">
+                <table id="postabout">
+                    {% if writer %}
+                    <tr>
+                        <td class="rowspec">Author</td>
+                        <td>{{ writer }}</td>
+                    </tr>
+                    {% endif %}
+                    <tr>
+                        <td class="rowspec">Posted</td>
+                        <td>{{ date | date: "%d %B %Y" }}</td>
+                    </tr>
+                </table>
+            </div>
+            {{ content }}
+        </div>
+        <div class="toc-container">
+            <div>
+                <div id="outline-header">
+                    <p style="font-size: 1rem; font-weight: 700;">Outline</p>
+                    <a href="#" id="gotop-toc">Go back</a>
+                </div>
+                {{ content | toc }}
+            </div>
         </div>
     </div>
-</div>
-
-<!-- table of content -->
-
 </main>
 
 {% endblock %}

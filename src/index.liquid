@@ -1,0 +1,44 @@
+---
+title: Home
+writer: waolo
+eleventyNavigation:
+    key: "Home"
+---
+{% layout "base" %}
+{% block content %}
+
+<main class="tight-page">
+
+<section>
+<h1>Hi, I'm {{ writer }}</h1>
+<p>
+  Notes on mathematical optimization, data analysis and Linux stuff,
+  plus whatever else I end up tinkering with.
+</p>
+</section>
+
+<section>
+<h2>Recent posts</h2>
+{% assign recent = collections.blog_posts | reverse %}
+<ul class="postlist recent">
+  {% for post in recent limit: 5 %}
+    <li>
+      <a href="{{ post.url }}">{{ post.data.title }}</a>
+      <time datetime="{{ post.date | date: '%Y-%m-%d' }}">{{ post.date | date: "%d %b %Y" }}</time>
+    </li>
+  {% endfor %}
+</ul>
+<p><a href="/posts">All posts</a></p>
+</section>
+
+<section>
+<h2>Topics</h2>
+<p>
+  <a href="/tags/linux/">Linux</a> ·
+  <a href="/tags/data/">Data</a> ·
+  <a href="/tags/math/">Math</a> ·
+  <a href="/tags/misc/">Misc</a>
+</p>
+</section>
+</main>
+{% endblock %}

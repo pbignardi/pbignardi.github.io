@@ -5,6 +5,10 @@ navOptions:
     includeSelf: true
 ---
 
+In this post I will be testing stuff as if we were live, in production!
+
+<!-- excerpt -->
+
 ## This is my first post on this website
 
 Hello world!

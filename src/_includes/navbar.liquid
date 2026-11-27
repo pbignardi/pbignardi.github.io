@@ -1,9 +1,9 @@
 <nav class="navbar">
-    <h3>My website</h3>
-    <!-- this will become a list done with templating -->
+    <h3><a href="/" id="navbartitle">{{ website_title }}</a></h3>
     <ul>
-        <li><a href="/">Home</a></li>
         <li><a href="/posts">Posts</a></li>
         <li><a href="/about">About</a></li>
+        <li><input type="checkbox" class="theme-toggle" aria-label="Toggle theme"></li>
     </ul>
 </nav>
+<script src="/js/themechanger.js" defer></script>
